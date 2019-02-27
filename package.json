@@ -1,0 +1,23 @@
+{
+  "name": "webnapp",
+  "version": "1.0.0",
+  "description": "website and app for our driver monitoring system",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dexuiz/webnapp.git"
+  },
+  "author": "dexuiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dexuiz/webnapp/issues"
+  },
+  "homepage": "https://github.com/dexuiz/webnapp#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
