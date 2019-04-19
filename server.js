@@ -5,8 +5,11 @@ const port = process.env.PORT || 5000;
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const bodyParser =  require('body-parser');
+const twilio = require('twilio');
+const otp = require('otp-generator')
 var server  = require("http").createServer(app)
 var io = require('socket.io')(server);
+
 // const driver = require("./models/driver.js")
 // const trip =  require("./models/trip.js")
 app.use(express.static(__dirname+"/public"))
@@ -14,6 +17,7 @@ app.set('view engine','ejs')
 app.use(methodOverride("_method"))
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
+var client = new twilio('AC9d648b86a8a16a6fd9680db972a8ed55','480a768f332d69150f8c8f084e84b1d8')
 
 let gps=[0,0]
 
@@ -124,14 +128,31 @@ app.get("/trips",(req,res)=>{
 
 
 
-// app.get("/login",(req,res)=>{
+app.get("/login",(req,res)=>{
+	res.render("login")
+ })
 
-// })
+var pin =0
+app.post("/otp",(req,res)=>{
+	pin=otp.generate(6,{upperCase: false, specialChars:false})
+	client.messages.create({
+  	to: '+919699727877',
+  	from: 'YOUR_TWILIO_NUMBER',
+  	body: 'your pin is '+pin
+	});
 
+})
 
-// app.get("/admin",(req,res)=>{
+app.post("/verify",(req,res)=>{
+	rpin = req.body.pin
+	if(rpin ==pin){
+		res.send("trip has started")
+	}
+})
 
-// })
+app.get("/admin",(req,res)=>{
+	res.render("admin")
+ })
 
 // app.get("/admin/adddriver",(req,res)=>{
 

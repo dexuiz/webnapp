@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+	<script src="/semantic/dist/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+   crossorigin=""/>
+   <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+	<title>
+		login
+	</title>
+	<style type="text/css">
+    body {
+      background-color: #FFFFFF;
+    }
+    body > .grid {
+      height: 100%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 450px;
+    }
+  </style>
+</head>
+<body>
+	<div class="ui sidebar inverted left vertical menu ">
+      <a class="item">
+        home
+      </a>
+      <a href="/form" class="item">
+        form
+      </a>
+      <a href="#" class="item">
+        item 3
+      </a>
+    </div>
+    <div class="pusher">
+      <div class="ui top menu">
+        <div class="item">
+          <i class="sidebar icon large"></i>
+        </div>
+        <div class=" ui centered header item">
+            Driver monitoring system
+        </div>
+  
+    </div>
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui blue header">
+      <div class="content">
+        Log-in to your account
+      </div>
+    </h2>
+    <form class="ui large form">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="email" placeholder="E-mail address">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="Password">
+          </div>
+        </div>
+        <div class="ui fluid large blue submit button">Login</div>
+      </div>
+
+      <div class="ui error message"></div>
+
+    </form>
+
+    <div class="ui message">
+      Welcome to driveazy
+    </div>
+ </div>
+</div>
+</div>s
+</body>
+</html>
